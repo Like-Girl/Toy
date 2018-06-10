@@ -20,6 +20,8 @@
         <zkclient.version>0.10</zkclient.version>
         <curator.version>4.0.1</curator.version>
         <guava.version>18.0</guava.version>
+        <!-- mina 依赖 -->
+        <mina.version>2.0.7</mina.version>
     </properties>
 
     <dependencies>
@@ -106,6 +108,32 @@
             <artifactId>jedis</artifactId>
             <version>2.7.2</version>
         </dependency>
+
+        <!-- mina 依赖 -->
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+            <version>${mina.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-integration-jmx</artifactId>
+            <version>${mina.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-integration-beans</artifactId>
+            <version>${mina.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-integration-ognl</artifactId>
+            <version>${mina.version}</version>
+        </dependency>
+
 
 
 
