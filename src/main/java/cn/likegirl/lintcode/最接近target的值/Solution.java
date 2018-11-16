@@ -1,6 +1,17 @@
 package cn.likegirl.lintcode.最接近target的值;
 
 /**
+ *
+ * 1478. 最接近target的值
+ * 给出一个数组，在数组中找到两个数，使得它们的和最接近目标值但不超过目标值，返回它们的和
+ *
+ * 样例
+ * Input:target = 15
+ * array = [1,3,5,11,7]
+ * Output:14
+ * 注意事项
+ * 如果没有满足要求的结果就返回 -1.
+ *
  * @author LikeGirl
  * @version v1.0
  * @title: Solution
