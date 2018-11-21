@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.lang.reflect.Field;
 
-final class User{
+final class User {
     private String id;
 
     public User(String id) {
@@ -34,8 +34,8 @@ public class Test01 {
         Class<Integer> integerClass = Integer.class;
         Field value = integerClass.getDeclaredField("value");
         value.setAccessible(true);
-        value.setInt(a,b);
-        value.setInt(b,temp);
+        value.setInt(a, b);
+        value.setInt(b, temp);
     }
 
     public void swap(Integer[] arrs) {
@@ -65,5 +65,17 @@ public class Test01 {
         User user = new User("hi");
         swap(user);
         System.out.println(user.toString());
+    }
+
+    @Test
+    public void test02() {
+        User u1 = new User("1");
+        User u2 = u1;
+
+        System.out.println(u1 == u2);
+        u2.setId("2");
+        System.out.println(u1.toString());
+        System.out.println(u2.toString());
+        System.out.println(u1 == u2);
     }
 }

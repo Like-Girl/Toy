@@ -13,10 +13,10 @@ public class Main {
     }
 
     public static void exchange(int a, int b) throws Exception {
+    	int temp = a;
         Field field = Integer.class.getDeclaredField("value");
         field.setAccessible(true);
-        Object temp = field.get(a);
-        field.set(a,b);
-        field.set(b,temp);
+        field.setInt(a,b);
+        field.setInt(b,temp);
     }
 }
