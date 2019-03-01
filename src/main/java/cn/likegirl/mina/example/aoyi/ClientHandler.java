@@ -71,7 +71,7 @@ public class ClientHandler extends IoHandlerAdapter {
 
 	@Override
 	public void sessionClosed(IoSession session) throws Exception {
-		session.closeOnFlush();
+		session.close(true);
 	}
 
 	@Override

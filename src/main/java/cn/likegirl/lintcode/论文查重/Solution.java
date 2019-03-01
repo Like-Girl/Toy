@@ -1,9 +1,5 @@
 package cn.likegirl.lintcode.论文查重;
 
-import org.apache.commons.lang.ArrayUtils;
-import org.checkerframework.checker.units.qual.A;
-import sun.java2d.pipe.AAShapePipe;
-
 import java.util.*;
 
 /**
@@ -82,7 +78,14 @@ public class Solution {
             }
         }
         pairs.addAll(newPairs);
-        for (String w1 : words1) {
+        String w1;
+        String w2;
+        for (int i = 0; i < words1.size(); i++) {
+            if (i >= words2.size()) {
+                break;
+            }
+            w1 = words1.get(i);
+            w2 = words2.get(i);
             similarityWords.clear();
             for (List<String> p : pairs) {
                 if (p.get(0).equals(w1)) {
@@ -92,9 +95,16 @@ public class Solution {
                     similarityWords.add(p.get(0));
                 }
             }
-            for (String w2 : words2) {
-                if (similarityWords.contains(w2)) {
+            if (pairs.size() > 0) {
+                if (similarityWords.contains(w2) || w1.equals(w2)) {
                     count++;
+                }
+            } else {
+                for (int j = 0; j < words2.size(); j++) {
+                    if (w1.equals(words2.get(j))) {
+                        count++;
+                        continue;
+                    }
                 }
             }
         }
@@ -102,8 +112,8 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        List<String> word1 = Arrays.asList("great","acting","skills","life");
-        List<String> word2 = Arrays.asList("fine","drama","talent","talent");
+        List<String> word1 = Arrays.asList("great", "acting", "skills", "life");
+        List<String> word2 = Arrays.asList("fine", "drama", "talent", "talent");
         List<String> p1 = Arrays.asList("great", "good");
         List<String> p2 = Arrays.asList("fine", "good");
         List<String> p3 = Arrays.asList("acting", "drama");

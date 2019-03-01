@@ -266,6 +266,25 @@
             <artifactId>mina-integration-ognl</artifactId>
             <version>${mina.version}</version>
         </dependency>
+		<!-- dom4j jaxen 配套使用-->
+		<dependency>
+			<groupId>org.dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.6</version>
+			<type>bundle</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.1.3.RELEASE</version>
+		</dependency>
+
 
 	</dependencies>
 
