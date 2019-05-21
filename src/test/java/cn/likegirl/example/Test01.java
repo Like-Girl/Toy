@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import com.alibaba.fastjson.JSON;
 
-import cn.likegirl.mina.example.aoyi.model.DeviceVin;
+import cn.likegirl.网络编程.mina.example.aoyi.model.DeviceVin;
 import cn.likegirl.utils.JSONUtils;
 
 import java.text.ParseException;

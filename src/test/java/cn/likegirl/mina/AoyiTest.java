@@ -12,9 +12,9 @@ import org.apache.commons.collections4.map.HashedMap;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
-import cn.likegirl.mina.example.aoyi.utils.ByteDisposeUtil;
-import cn.likegirl.mina.example.aoyi.utils.CRCUtil;
-import cn.likegirl.mina.example.aoyi.utils.DataTransferUtil;
+import cn.likegirl.网络编程.mina.example.aoyi.utils.ByteDisposeUtil;
+import cn.likegirl.网络编程.mina.example.aoyi.utils.CRCUtil;
+import cn.likegirl.网络编程.mina.example.aoyi.utils.DataTransferUtil;
 
 public class AoyiTest {
 
