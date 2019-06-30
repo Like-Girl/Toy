@@ -461,8 +461,8 @@ public class XLSXCovertCSVReader {
 	public static void main(String[] args) throws Exception {
 		List<String[]> list = XLSXCovertCSVReader
 				.readerExcel(
-						"F:\\test.xlsx",
-						"Sheet1", 17);
+						System.getProperty("user.dir") + "\\" + "20190506-153727.xlsx",
+						"1月", 256);
 		for (String[] record : list) {
 			for (String cell : record) {
 				System.out.print(cell + "  ");
