@@ -21,10 +21,10 @@ public class UnknowFormatResolve {
     System.out.println(System.getProperty("user.dir"));
     System.out.println(this.getClass().getResource("/").getPath());
 
-    System.out.println(System.getProperty("user.dir") + "\\" + "20190506-153727.xlsx");
+    System.out.println(System.getProperty("user.dir") + "\\" + "异常 - 副本.xlsx");
 
     InputStream inputStream = new FileInputStream(
-        System.getProperty("user.dir") + "\\" + "20190506-153727.xlsx");
+        System.getProperty("user.dir") + "\\" + "异常 - 副本.xlsx");
 
 //    List<List<RowFormat>> lists = ExcelUtil.readExcel(inputStream, "20190506-153727.xlsx");
 //
@@ -104,3 +104,6 @@ public class UnknowFormatResolve {
     }
   }
 }
+
+
+
