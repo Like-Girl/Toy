@@ -6,7 +6,17 @@
 
   <groupId>cn.likegiirl</groupId>
   <artifactId>Toy</artifactId>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>lintcode</module>
+    <module>java-io</module>
+    <module>java-design</module>
+    <module>java-algorithm</module>
+    <module>java-concurrent-programming</module>
+    <module>java-jvm</module>
+    <module>java-toy</module>
+  </modules>
 
   <name>Toy</name>
 
