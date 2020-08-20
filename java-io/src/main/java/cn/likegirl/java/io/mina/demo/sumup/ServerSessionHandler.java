@@ -1,7 +1,7 @@
 package cn.likegirl.java.io.mina.demo.sumup;
 
-import cn.likegirl.网络编程.mina.demo.sumup.message.AddMessage;
-import cn.likegirl.网络编程.mina.demo.sumup.message.ResultMessage;
+import cn.likegirl.java.io.mina.demo.sumup.message.AddMessage;
+import cn.likegirl.java.io.mina.demo.sumup.message.ResultMessage;
 import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;

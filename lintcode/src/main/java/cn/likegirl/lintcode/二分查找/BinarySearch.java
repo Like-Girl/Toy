@@ -1,8 +1,5 @@
 package cn.likegirl.lintcode.二分查找;
 
-import cn.likegirl.algorithm.排序.交换排序.快速排序.Quicksort;
-import cn.likegirl.algorithm.排序.插入排序.希尔排序.Shellsort;
-import cn.likegirl.algorithm.排序.插入排序.直接插入排序.Insertsort;
 
 import java.util.ArrayList;
 import java.util.List;

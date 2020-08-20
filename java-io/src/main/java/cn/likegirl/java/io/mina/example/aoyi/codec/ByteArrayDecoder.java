@@ -2,16 +2,16 @@ package cn.likegirl.java.io.mina.example.aoyi.codec;
 
 
 import java.nio.ByteBuffer;
-
-import org.apache.log4j.Logger;
 import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.CumulativeProtocolDecoder;
 import org.apache.mina.filter.codec.ProtocolDecoderOutput;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ByteArrayDecoder extends CumulativeProtocolDecoder {
 
-	public static Logger log = Logger.getLogger(ByteArrayDecoder.class);
+	public static Logger log = LoggerFactory.getLogger(ByteArrayDecoder.class);
 
 	/**
 	 * 

@@ -1,6 +1,6 @@
 package cn.likegirl.java.io.mina.demo.chat.client;
 
-import cn.likegirl.网络编程.mina.demo.chat.ChatCommand;
+import cn.likegirl.java.io.mina.demo.chat.ChatCommand;
 import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;

@@ -1,7 +1,7 @@
 package cn.likegirl.java.design.proxy.proxy_03;
 
-import cn.likegirl.design.proxy.proxy_02.Moveable;
-import cn.likegirl.design.proxy.proxy_02.Tank;
+import cn.likegirl.java.design.proxy.proxy_02.Moveable;
+import cn.likegirl.java.design.proxy.proxy_02.Tank;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;

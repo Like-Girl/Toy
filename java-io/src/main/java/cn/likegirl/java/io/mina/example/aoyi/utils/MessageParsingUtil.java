@@ -1,12 +1,10 @@
 package cn.likegirl.java.io.mina.example.aoyi.utils;
 
+import cn.likegirl.java.io.mina.example.aoyi.model.Status;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-
-
-import cn.likegirl.网络编程.mina.example.aoyi.model.Status;
 
 /**
  * <p>报文解析工具</p>

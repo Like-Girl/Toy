@@ -1,8 +1,8 @@
 package cn.likegirl.java.io.mina.demo.chat;
 
+import cn.likegirl.java.io.mina.demo.echoserver.ssl.BogusSslContextFactory;
 import java.net.InetSocketAddress;
 
-import cn.likegirl.网络编程.mina.demo.echoserver.ssl.BogusSslContextFactory;
 import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.textline.TextLineCodecFactory;

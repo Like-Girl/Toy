@@ -1,9 +1,8 @@
 package cn.likegirl.java.io.mina.example.aoyi;
 
+import cn.likegirl.java.io.mina.example.aoyi.utils.CRCUtil;
+import cn.likegirl.java.io.mina.example.aoyi.utils.DataTransferUtil;
 import java.util.Arrays;
-
-import cn.likegirl.网络编程.mina.example.aoyi.utils.CRCUtil;
-import cn.likegirl.网络编程.mina.example.aoyi.utils.DataTransferUtil;
 
 public class ResponseUtil {
 	

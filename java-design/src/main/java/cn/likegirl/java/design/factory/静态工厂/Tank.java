@@ -1,6 +1,6 @@
 package cn.likegirl.java.design.factory.静态工厂;
 
-import cn.likegirl.design.factory.interfaces.Moveable;
+import cn.likegirl.java.design.factory.interfaces.Moveable;
 
 /**
  * @author LikeGirl

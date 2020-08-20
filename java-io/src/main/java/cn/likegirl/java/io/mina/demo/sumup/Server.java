@@ -1,8 +1,7 @@
 package cn.likegirl.java.io.mina.demo.sumup;
 
+import cn.likegirl.java.io.mina.demo.sumup.codec.SumUpProtocolCodecFactory;
 import java.net.InetSocketAddress;
-
-import cn.likegirl.网络编程.mina.demo.sumup.codec.SumUpProtocolCodecFactory;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
 import org.apache.mina.filter.logging.LoggingFilter;

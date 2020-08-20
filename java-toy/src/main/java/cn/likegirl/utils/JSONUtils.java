@@ -16,7 +16,7 @@ public class JSONUtils {
 	 */
 	public static String beanToJson(Object object, String dataFormatString) {
 		if (object != null) {
-			if (org.apache.commons.lang.StringUtils.isEmpty(dataFormatString)) {
+			if (org.springframework.util.StringUtils.isEmpty(dataFormatString)) {
 				
 				return JSONObject.toJSONString(object);
 			}
@@ -48,7 +48,7 @@ public class JSONUtils {
 	 * @return
 	 */
 	public static String stringToJsonByFastjson(String key, String value) {
-		if (org.apache.commons.lang.StringUtils.isEmpty(key) || org.apache.commons.lang.StringUtils.isEmpty(value)) {
+		if (org.springframework.util.StringUtils.isEmpty(key) || org.springframework.util.StringUtils.isEmpty(value)) {
 			return null;
 		}
 		Map<String, String> map = new HashMap<String, String>(16);
@@ -64,7 +64,7 @@ public class JSONUtils {
 	 * @return
 	 */
 	public static Object jsonToBean(String json, Object clazz) {
-		if (org.apache.commons.lang.StringUtils.isEmpty(json) || clazz == null) {
+		if (org.springframework.util.StringUtils.isEmpty(json) || clazz == null) {
 			return null;
 		}
 		return JSON.parseObject(json, clazz.getClass());
@@ -78,7 +78,7 @@ public class JSONUtils {
 	 */
 	@SuppressWarnings("unchecked")
 	public static Map<String, Object> jsonToMap(String json) {
-		if (org.apache.commons.lang.StringUtils.isEmpty(json)) {
+		if (org.springframework.util.StringUtils.isEmpty(json)) {
 			return null;
 		}
 		return JSON.parseObject(json, Map.class);

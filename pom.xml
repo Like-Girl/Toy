@@ -25,85 +25,78 @@
 
     <revision>1.0.0</revision>
 
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-    <java.version>1.8</java.version>
-
-
+    <lombok.version>1.18.6</lombok.version>
     <junit.version>4.12</junit.version>
-    <zookeeper.version>3.4.14</zookeeper.version>
+
+    <!--  springboot  -->
+    <spring-boot.version>2.2.7.RELEASE</spring-boot.version>
+    <!--  zookeeper  -->
+    <zookeeper.version>3.5.3-beta</zookeeper.version>
     <zkclient.version>0.10</zkclient.version>
     <curator.version>4.0.1</curator.version>
+
     <javax.servlet.version>1.2</javax.servlet.version>
     <servlet.api.version>3.1.0</servlet.api.version>
     <guava.version>26.0-jre</guava.version>
+
+    <!-- redis client -->
+    <jedis.version>2.7.2</jedis.version>
+
+    <!--  apache commons 系列  -->
+    <commons-lang.version>2.6</commons-lang.version>
+
+    <!-- fastjson -->
+    <fastjson.version>1.2.70</fastjson.version>
+
+    <!--  excel 工具类  -->
+    <poi.version>3.15</poi.version>
+    <easyexcel.version>1.1.2-beta4</easyexcel.version>
+    <!--  xml 解析  -->
+    <dom4j.version>2.1.3</dom4j.version>
+    <jaxen.version>1.1.6</jaxen.version>
+    <!--  http client  -->
+    <okhttp.version>3.14.8</okhttp.version>
+    <apache.httpcomponents.version>4.5.5</apache.httpcomponents.version>
     <!-- mina 依赖 -->
     <mina.version>2.0.7</mina.version>
+
+    <!--  插件管理  -->
+    <apache-maven-plugins-compiler.version>3.2</apache-maven-plugins-compiler.version>
+    <apache-maven-plugins-deploy.version>2.8.2</apache-maven-plugins-deploy.version>
+    <apache-maven-plugins-install.version>2.5.2</apache-maven-plugins-install.version>
+    <apache-maven-plugins-jar.version>3.0.2</apache-maven-plugins-jar.version>
+    <apache-maven-plugins-plugin.version>3.2</apache-maven-plugins-plugin.version>
+    <apache-maven-plugins-source.version>3.0.1</apache-maven-plugins-source.version>
+    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+    <duplicate-finder-maven-plugin.version>1.3.0</duplicate-finder-maven-plugin.version>
+    <flatten-maven-plugin.version>1.0.1</flatten-maven-plugin.version>
+    <git-commit-id-plugin.version>2.2.4</git-commit-id-plugin.version>
+    <gmavenplus-plugin.version>1.6</gmavenplus-plugin.version>
+    <maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
+    <reproducible-build-maven-plugin.version>0.5.2</reproducible-build-maven-plugin.version>
+
+    <!--  其他参数  -->
+    <java.version>1.8</java.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
   <dependencies>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
-    </dependency>
-
-    <!-- 添加jtl支持 -->
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jstl</artifactId>
-      <version>${javax.servlet.version}</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>${servlet.api.version}</version>
-      <scope>provided</scope>
-    </dependency>
-
-
-    <!-- zookeeper -->
-    <dependency>
-      <groupId>org.apache.zookeeper</groupId>
-      <artifactId>zookeeper</artifactId>
-      <version>${zookeeper.version}</version>
-      <type>pom</type>
-      <exclusions>
-        <exclusion>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
-
-    <dependency>
-      <groupId>com.101tec</groupId>
-      <artifactId>zkclient</artifactId>
-      <version>${zkclient.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.curator</groupId>
-      <artifactId>curator-framework</artifactId>
-      <version>${curator.version}</version>
-    </dependency>
-
-
-    <dependency>
-      <groupId>org.apache.curator</groupId>
-      <artifactId>curator-recipes</artifactId>
-      <version>${curator.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.curator</groupId>
-      <artifactId>curator-client</artifactId>
-      <version>${curator.version}</version>
     </dependency>
 
     <!-- guava -->
@@ -113,216 +106,759 @@
       <version>${guava.version}</version>
     </dependency>
 
-
-    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>4.5.5</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpcore</artifactId>
-      <version>4.4.9</version>
-    </dependency>
-
-
-    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpmime</artifactId>
-      <version>4.5.5</version>
-    </dependency>
-
-    <dependency>
-      <groupId>redis.clients</groupId>
-      <artifactId>jedis</artifactId>
-      <version>2.7.2</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi</artifactId>
-      <version>3.15</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi-ooxml</artifactId>
-      <version>3.15</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.25.sec10</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
-    <dependency>
-      <groupId>commons-lang</groupId>
-      <artifactId>commons-lang</artifactId>
-      <version>2.6</version>
-    </dependency>
-
-    <!-- Elasticsearch核心依赖包 -->
-    <dependency>
-      <groupId>org.elasticsearch.client</groupId>
-      <artifactId>transport</artifactId>
-      <version>5.5.2</version>
-    </dependency>
-
-    <!--  zookeeper -->
-    <dependency>
-      <groupId>org.apache.zookeeper</groupId>
-      <artifactId>zookeeper</artifactId>
-      <version>${zookeeper.version}</version>
-      <type>pom</type>
-      <exclusions>
-        <exclusion>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
-
-    <dependency>
-      <groupId>com.101tec</groupId>
-      <artifactId>zkclient</artifactId>
-      <version>${zkclient.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.curator</groupId>
-      <artifactId>curator-framework</artifactId>
-      <version>${curator.version}</version>
-    </dependency>
-
-
-    <dependency>
-      <groupId>org.apache.curator</groupId>
-      <artifactId>curator-recipes</artifactId>
-      <version>${curator.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.curator</groupId>
-      <artifactId>curator-client</artifactId>
-      <version>${curator.version}</version>
-    </dependency>
-
-    <!--  guava -->
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>${guava.version}</version>
-    </dependency>
-
-
-    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>4.5.5</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpcore</artifactId>
-      <version>4.4.9</version>
-    </dependency>
-
-
-    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpmime</artifactId>
-      <version>4.5.5</version>
-    </dependency>
-
-    <dependency>
-      <groupId>redis.clients</groupId>
-      <artifactId>jedis</artifactId>
-      <version>2.7.2</version>
-    </dependency>
-
-    <!-- mina 依赖 -->
-    <dependency>
-      <groupId>org.apache.mina</groupId>
-      <artifactId>mina-core</artifactId>
-      <version>${mina.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.mina</groupId>
-      <artifactId>mina-integration-jmx</artifactId>
-      <version>${mina.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.mina</groupId>
-      <artifactId>mina-integration-beans</artifactId>
-      <version>${mina.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.mina</groupId>
-      <artifactId>mina-integration-ognl</artifactId>
-      <version>${mina.version}</version>
-    </dependency>
-    <!-- dom4j jaxen 配套使用-->
-    <dependency>
-      <groupId>org.dom4j</groupId>
-      <artifactId>dom4j</artifactId>
-      <version>2.1.3</version>
-    </dependency>
-    <dependency>
-      <groupId>jaxen</groupId>
-      <artifactId>jaxen</artifactId>
-      <version>1.1.6</version>
-      <type>bundle</type>
-    </dependency>
-
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
       <version>5.1.3.RELEASE</version>
     </dependency>
 
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>easyexcel</artifactId>
-      <version>1.1.2-beta4</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.6</version>
-    </dependency>
 
   </dependencies>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>cn.likegiirl</groupId>
+        <artifactId>java-toy</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
+      <!-- 添加jtl支持 -->
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>${javax.servlet.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>${servlet.api.version}</version>
+        <scope>provided</scope>
+      </dependency>
+
+      <!-- zookeeper -->
+      <dependency>
+        <groupId>org.apache.zookeeper</groupId>
+        <artifactId>zookeeper</artifactId>
+        <version>${zookeeper.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.101tec</groupId>
+        <artifactId>zkclient</artifactId>
+        <version>${zkclient.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-framework</artifactId>
+        <version>${curator.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-recipes</artifactId>
+        <version>${curator.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-client</artifactId>
+        <version>${curator.version}</version>
+      </dependency>
+
+      <!-- apache http client -->
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>${apache.httpcomponents.version}</version>
+      </dependency>
+
+<!--      <dependency>-->
+<!--        <groupId>org.apache.httpcomponents</groupId>-->
+<!--        <artifactId>httpcore</artifactId>-->
+<!--        <version>${apache.httpcomponents.version}</version>-->
+<!--      </dependency>-->
+
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpmime</artifactId>
+        <version>${apache.httpcomponents.version}</version>
+      </dependency>
+
+      <!-- okhttp client -->
+      <dependency>
+        <groupId>com.squareup.okhttp3</groupId>
+        <artifactId>okhttp</artifactId>
+        <version>${okhttp.version}</version>
+      </dependency>
+
+      <!-- xml 解析 dom4j jaxen 配套使用-->
+      <dependency>
+        <groupId>org.dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>${dom4j.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>jaxen</groupId>
+        <artifactId>jaxen</artifactId>
+        <version>${jaxen.version}</version>
+        <type>bundle</type>
+      </dependency>
+
+      <!-- excel -->
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>${poi.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>${poi.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>easyexcel</artifactId>
+        <version>${easyexcel.version}</version>
+      </dependency>
+
+      <!-- fastjson -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson.version}</version>
+      </dependency>
+
+      <!-- jedis -->
+      <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>${jedis.version}</version>
+      </dependency>
+
+      <!-- mina 依赖 -->
+      <dependency>
+        <groupId>org.apache.mina</groupId>
+        <artifactId>mina-core</artifactId>
+        <version>${mina.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.mina</groupId>
+        <artifactId>mina-integration-jmx</artifactId>
+        <version>${mina.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.mina</groupId>
+        <artifactId>mina-integration-beans</artifactId>
+        <version>${mina.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.mina</groupId>
+        <artifactId>mina-integration-ognl</artifactId>
+        <version>${mina.version}</version>
+      </dependency>
+
+    </dependencies>
+
+
+  </dependencyManagement>
 
   <build>
-    <finalName>Toy</finalName>
+    <finalName>${project.artifactId}-${git_revision}</finalName>
+
+    <pluginManagement>
+      <!--
+          1. 必要信息包括：groupId, artifactId, version
+          2. version必须以变量形式传入
+          3. 部分包需要exclusion，则填写相关信息
+      -->
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${apache-maven-plugins-compiler.version}</version>
+        </plugin>
+        <!--
+            将pom.xml中的变量展开后再做 install/deploy
+            http://www.mojohaus.org/flatten-maven-plugin/flatten-mojo.html
+         -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${apache-maven-plugins-jar.version}</version>
+        </plugin>
+
+        <!-- 打包源码 -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>${apache-maven-plugins-source.version}</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>${apache-maven-plugins-install.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>${apache-maven-plugins-deploy.version}</version>
+        </plugin>
+
+        <!-- 单元测试 -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven-surefire-plugin.version}</version>
+        </plugin>
+
+        <!-- 变量展开和保持 -->
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>flatten-maven-plugin</artifactId>
+          <version>${flatten-maven-plugin.version}</version>
+          <configuration>
+            <updatePomFile>true</updatePomFile>
+            <flattenMode>bom</flattenMode>
+            <flattenedPomFilename>.flattened-pom.xml</flattenedPomFilename>
+            <outputDirectory>${project.build.directory}</outputDirectory>
+            <pomElements>
+              <parent>expand</parent>
+              <distributionManagement>expand</distributionManagement>
+              <properties>keep</properties>
+              <pluginManagement>keep</pluginManagement>
+              <dependencyManagement>keep</dependencyManagement>
+              <build>keep</build>
+              <profiles>keep</profiles>
+            </pomElements>
+          </configuration>
+          <executions>
+            <execution>
+              <id>flatten</id>
+              <phase>validate</phase>
+              <goals>
+                <goal>flatten</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>flatten.clean</id>
+              <phase>clean</phase>
+              <goals>
+                <goal>clean</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!--
+            强制规则检测
+            http://maven.apache.org/enforcer/maven-enforcer-plugin/usage.html
+         -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>${maven-enforcer-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>enforcer</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <phase>compile</phase>
+              <configuration>
+                <rules>
+                  <!-- 永远失败 -->
+                  <!--<AlwaysFail/>-->
+
+                  <!-- 永远成功 -->
+                  <!--<AlwaysPass/>-->
+
+                  <!-- 检查重复引用不同版本的相同依赖 -->
+                  <!--<dependencyConvergence/>-->
+
+                  <!-- 项目打包只能为Snapshot版本 -->
+                  <!--<requireSnapshotVersion>-->
+                  <!--<message>项目只能打包为Snapshot版本</message>-->
+                  <!--</requireSnapshotVersion>-->
+
+                  <!-- 项目打包只能为Release版本 -->
+                  <!--<requireReleaseVersion>-->
+                  <!--<message>项目只能打包为Release版本</message>-->
+                  <!--</requireReleaseVersion>-->
+
+                  <!-- 强制使用Release依赖 -->
+                  <!--<requireReleaseDeps>-->
+                  <!--<message>不能依赖Snapshot的包</message>-->
+                  <!--<includes></includes>-->
+                  <!--<excludes></excludes>-->
+                  <!--</requireReleaseDeps>-->
+
+                  <!-- 如果出现了相同的包不同版本，且低版本覆盖高版本，终止 -->
+                  <requireUpperBoundDeps>
+                    <!-- 'uniqueVersions' (default:false) can be set to true if you want to compare the timestamped SNAPSHOTs  -->
+                    <!--                    <uniqueVersions>true</uniqueVersions>-->
+                    <!-- 忽略某些情况:-->
+                    <excludes>
+<!--                      <exclude>com.likegirl:java-io</exclude>-->
+                    </excludes>
+                    <message>现了相同的包不同版本，且低版本覆盖高版本</message>
+                  </requireUpperBoundDeps>
+
+                  <!-- 禁止重复引用包 -->
+                  <banDuplicatePomDependencyVersions>
+                    <message>出现重复引用的包</message>
+                  </banDuplicatePomDependencyVersions>
+
+                  <!-- 必须传递profile参数 -->
+                  <requireActiveProfile>
+                    <profiles>loc,test,pre,prd,release</profiles>
+                    <message>必须在指定环境运行（loc, test, pre, prd, release）</message>
+                    <all>false</all>
+                  </requireActiveProfile>
+                </rules>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- 得到git版本信息, 并注入${revision} -->
+        <plugin>
+          <groupId>pl.project13.maven</groupId>
+          <artifactId>git-commit-id-plugin</artifactId>
+          <version>${git-commit-id-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>get-the-git-infos</id>
+              <phase>validate</phase>
+              <goals>
+                <goal>revision</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>validate-the-git-infos</id>
+              <phase>package</phase>
+              <goals>
+                <goal>validateRevision</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <skipPoms>false</skipPoms>
+            <dateFormat>yyyy.MM.dd</dateFormat>
+            <verbose>false</verbose>
+            <generateGitPropertiesFile>true</generateGitPropertiesFile>
+            <generateGitPropertiesFilename>${project.build.outputDirectory}/git-info.json</generateGitPropertiesFilename>
+            <format>json</format>
+            <excludeProperties>
+              <excludeProperty>git.build.*</excludeProperty>
+              <excludeProperty>git.remote.origin.url</excludeProperty>
+            </excludeProperties>
+            <injectAllReactorProjects>true</injectAllReactorProjects>
+            <gitDescribe>
+              <always>true</always>
+              <dirty>-SNAPSHOT</dirty>
+              <match>__null__</match>
+            </gitDescribe>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.gmavenplus</groupId>
+          <artifactId>gmavenplus-plugin</artifactId>
+          <version>${gmavenplus-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>change-version</id>
+              <phase>validate</phase>
+              <goals>
+                <goal>execute</goal>
+              </goals>
+              <configuration>
+                <scripts>
+                  <script><![CDATA[
+                  import org.apache.maven.artifact.versioning.VersionRange;
+
+                  cmdline_V1 = System.properties['revision']?.trim()
+                  property_V2 = project.properties['revision']?.trim()
+
+                  git_branch_name = '${git.branch}'
+                  if (git_branch_name == '${git.commit.id}') {
+                      git_branch_name = '';
+                  }
+                  if (! git_branch_name) {
+                      git_branch_name = System.properties['branch_name']?.trim()
+                  }
+
+                  git_commit_date = '${git.commit.time}'
+                  git_describe = '${git.commit.id.describe}'
+                  git_dirty = '${git.dirty}'
+
+                  System.properties['git_revision'] = git_commit_date + '-' + git_describe
+                  project.properties['git_revision'] = git_commit_date + '-' + git_describe
+
+                  if (cmdline_V1) {
+                      var_revision = cmdline_V1;
+                  } else if (! git_describe) {
+                      var_revision = 'no-git-SNAPSHOT'
+                  } else if ((git_branch_name == 'master' || git_branch_name == 'pre') && property_V2) {
+                      if (git_dirty == 'true') {
+                          var_revision = property_V2 + '-SNAPSHOT';
+                      } else {
+                          var_revision = property_V2;
+                      }
+                  } else if (git_branch_name) {
+                      var_revision = git_branch_name + '-SNAPSHOT';
+                  } else {
+                      var_revision = git_commit_date + '-' + git_describe
+                  }
+
+
+                  println ''
+                  println ''
+                  println ''
+                  println 'OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoO'
+                  println '8                                                                 8'
+                  println 'O     Update `branch_name` to     ' + git_branch_name
+                  println 'O     Update `revision` to     ' + var_revision
+                  println '8                                                                 8'
+                  println 'OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoO'
+                  println ''
+                  println ''
+                  println ''
+
+                  System.properties['revision'] = var_revision
+                  project.properties['revision'] = var_revision
+                  project.properties['project.version'] = var_revision
+                  project.properties['git.build.version'] = var_revision
+                  project.version = var_revision
+                  project.artifact.version = var_revision
+                  project.artifact.versionRange = VersionRange.createFromVersion(var_revision)
+
+                  ]]></script>
+                </scripts>
+              </configuration>
+            </execution>
+
+
+          </executions>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.groovy</groupId>
+              <artifactId>groovy-all</artifactId>
+              <version>2.4.15</version>
+              <scope>runtime</scope>
+            </dependency>
+          </dependencies>
+        </plugin>
+
+        <!-- springboot 打包 -->
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring-boot.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>io.github.zlika</groupId>
+          <artifactId>reproducible-build-maven-plugin</artifactId>
+          <version>${reproducible-build-maven-plugin.version}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>strip-jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- 这个插件用于检测 潜在的class冲突风险 -->
+        <plugin>
+          <groupId>org.basepom.maven</groupId>
+          <artifactId>duplicate-finder-maven-plugin</artifactId>
+          <version>${duplicate-finder-maven-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>default</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <!-- https://github.com/basepom/duplicate-finder-maven-plugin/wiki#configuration-overview -->
+            <checkCompileClasspath>false</checkCompileClasspath>
+            <checkRuntimeClasspath>false</checkRuntimeClasspath>
+            <!-- 改成只报warning, 不中断编译 -->
+            <failBuildInCaseOfDifferentContentConflict>false</failBuildInCaseOfDifferentContentConflict>
+            <includePomProjects>true</includePomProjects>
+            <ignoredClassPatterns>
+              <ignoredClassPattern>com.dianping.cat.build.CodecComponentConfigurator</ignoredClassPattern>
+              <ignoredClassPattern>com.dianping.cat.build.ComponentsConfigurator</ignoredClassPattern>
+              <ignoredClassPattern>org.apache.xbean.recipe.ObjectRecipe</ignoredClassPattern>
+              <ignoredClassPattern>org.codehaus.plexus.component.builder.XBeanComponentBuilder</ignoredClassPattern>
+            </ignoredClassPatterns>
+            <ignoredResourcePatterns>
+              <ignoredResourcePattern>.*$</ignoredResourcePattern>
+            </ignoredResourcePatterns>
+          </configuration>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
 
     <plugins>
-      <!-- 解解决maven update project 后版本降低为1.5的bug -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
+        <artifactId>maven-enforcer-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.gmavenplus</groupId>
+        <artifactId>gmavenplus-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>io.github.zlika</groupId>
+        <artifactId>reproducible-build-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.basepom.maven</groupId>
+        <artifactId>duplicate-finder-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
+
+
+  <profiles>
+    <profile>
+      <!--
+          在本地环境中，只能往私有仓库部署Snapshot版本的包
+          （允许Parent为非Snapshot版本）
+      -->
+      <id>loc</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>enforcer-loc</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <phase>prepare-package</phase>
+                <configuration>
+                  <rules>
+                    <!--                    <requireUpperBoundDeps/>-->
+                    <requireSnapshotVersion>
+                      <message>本地环境部署项目只支持Snapshot版本</message>
+                      <failWhenParentIsRelease>false</failWhenParentIsRelease>
+                    </requireSnapshotVersion>
+                  </rules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <!--
+          在开发环境中，只能往私有仓库部署Snapshot版本的包
+          （允许Parent为非Snapshot版本）
+      -->
+      <id>dev</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>enforcer-loc</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <phase>prepare-package</phase>
+                <configuration>
+                  <rules>
+                    <!--                    <requireUpperBoundDeps/>-->
+                    <requireSnapshotVersion>
+                      <message>本地环境部署项目只支持Snapshot版本</message>
+                      <failWhenParentIsRelease>false</failWhenParentIsRelease>
+                    </requireSnapshotVersion>
+                  </rules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <!--
+          在开发环境中，只能往私有仓库部署Snapshot版本的包
+          （允许Parent为非Snapshot版本）
+      -->
+      <id>test</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>enforcer-test</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <phase>prepare-package</phase>
+                <configuration>
+                  <rules>
+                    <!--                    <requireUpperBoundDeps/>-->
+                    <requireSnapshotVersion>
+                      <message>开发环境部署项目只支持Snapshot版本</message>
+                      <failWhenParentIsRelease>false</failWhenParentIsRelease>
+                    </requireSnapshotVersion>
+                  </rules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <!--
+          在预发布环境，禁止引用Snapshot版本的依赖包
+      -->
+      <id>pre</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>enforcer-pre</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <phase>prepare-package</phase>
+                <configuration>
+                  <rules>
+                    <!--                    <requireUpperBoundDeps/>-->
+                    <requireReleaseDeps>
+                      <message>不能依赖Snapshot的包</message>
+                    </requireReleaseDeps>
+                  </rules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <!--
+          在生产环境，禁止引用Snapshot版本的依赖包
+      -->
+      <id>prd</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>enforcer-prd</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <phase>prepare-package</phase>
+                <configuration>
+                  <rules>
+                    <!--                    <requireUpperBoundDeps/>-->
+                    <requireReleaseDeps>
+                      <message>不能依赖Snapshot的包</message>
+                    </requireReleaseDeps>
+                  </rules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <!--
+          在发布模式中，禁止引用Snapshot版本的依赖包，并且只能使用Release版本进行发布
+      -->
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>flatten-maven-plugin</artifactId>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>release</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <phase>prepare-package</phase>
+                <configuration>
+                  <rules>
+                    <!--                    <requireUpperBoundDeps/>-->
+                    <requireReleaseDeps>
+                      <message>不能依赖Snapshot的包</message>
+                    </requireReleaseDeps>
+                    <requireReleaseVersion>
+                      <message>项目只能打包为Release版本</message>
+                    </requireReleaseVersion>
+                  </rules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>

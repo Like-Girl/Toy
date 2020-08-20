@@ -36,8 +36,8 @@ public class Solution {
         int[] nodeParent = new int[100001];
         List<List<Integer>> nodeChildren = new ArrayList<>();
         for (int i = 0; i <= 100000; i++) {
-            nodes.add(new ArrayList<>());
-            nodeChildren.add(new ArrayList<>());
+            nodes.add(new ArrayList<Integer>());
+            nodeChildren.add(new ArrayList<Integer>());
         }
         for (int i = 0; i < x.length; i++) {
             nodes.get(x[i]).add(y[i]);

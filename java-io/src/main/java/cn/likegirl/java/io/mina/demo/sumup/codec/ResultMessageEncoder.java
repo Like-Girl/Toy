@@ -1,6 +1,6 @@
 package cn.likegirl.java.io.mina.demo.sumup.codec;
 
-import cn.likegirl.网络编程.mina.demo.sumup.message.ResultMessage;
+import cn.likegirl.java.io.mina.demo.sumup.message.ResultMessage;
 import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.session.IoSession;
 

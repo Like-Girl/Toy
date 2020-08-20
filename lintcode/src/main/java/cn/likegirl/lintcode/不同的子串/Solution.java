@@ -1,8 +1,8 @@
 package cn.likegirl.lintcode.不同的子串;
 
-import org.apache.commons.lang.ArrayUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -34,6 +34,6 @@ public class Solution {
     public static void main(String[] args) {
         List<String> list = uniqueSubstring("caaab", 2);
         System.out.println(list.size());
-        System.out.println("Output:" + ArrayUtils.toString(list));
+        System.out.println("Output:" + Arrays.toString(list.toArray()));
     }
 }
