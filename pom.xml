@@ -49,7 +49,7 @@
     <fastjson.version>1.2.70</fastjson.version>
 
     <!--  excel 工具类  -->
-    <poi.version>3.15</poi.version>
+    <poi.version>4.1.2</poi.version>
     <easyexcel.version>1.1.2-beta4</easyexcel.version>
     <!--  xml 解析  -->
     <dom4j.version>2.1.3</dom4j.version>
