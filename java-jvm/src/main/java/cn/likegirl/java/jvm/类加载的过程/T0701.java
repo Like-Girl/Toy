@@ -35,6 +35,7 @@ class SuperClass{
 
     /**
      * 3. 当初始化一个类的时候，如果发现其父类还没有进行初始化，则需要先触发其父类的初始化
+     * 修饰 final 的变量
      */
     public static int value = 123;
 }
