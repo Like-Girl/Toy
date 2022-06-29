@@ -58,7 +58,7 @@
     <okhttp.version>3.14.8</okhttp.version>
     <apache.httpcomponents.version>4.5.5</apache.httpcomponents.version>
     <!-- mina 依赖 -->
-    <mina.version>2.0.7</mina.version>
+    <mina.version>2.0.22</mina.version>
 
     <!--  插件管理  -->
     <apache-maven-plugins-compiler.version>3.2</apache-maven-plugins-compiler.version>
